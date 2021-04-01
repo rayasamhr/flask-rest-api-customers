@@ -22,11 +22,18 @@ Setup:
 1. To install required dependencies, run `pip install -r requirements.txt`
 1. Using psql, create the `customers` database by entering `create database customers;`
 1. In the root folder of the project, create a file named `.env` with the following contents. Substitute {username} and {password} with the username and password of the Postgres user who owns the `customers` database
-```
-FLASK_ENV=development
-SQLALCHEMY_DATABASE_URI='postgresql://{username}:{password}@localhost:5432/customers'
-```
-
+    ```
+    FLASK_ENV=development
+    SQLALCHEMY_DATABASE_URI='postgresql://{username}:{password}@localhost:5432/customers'
+    ```
+1. Start the PostgreSQL service
+1. On the terminal/ command line window, create the required tables by running the following:
+    ```
+    flask db init
+    flask db migrate
+    flask db upgrade
+    ```
+1. To start the app, run `flask start`
 ## Authorization
 
 1. [Create An Administrator Account](#create-an-administrator-account)
