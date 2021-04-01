@@ -6,6 +6,26 @@
 
 ## Getting Started
 
+Requirements: 
+- Python, pip
+- PostgreSQL
+- Virtualenv
+
+Setup:
+1. In a terminal/ command line window, navigate to the root folder of the project
+1. Create a virtual environment `env` by running:
+    - [Mac/Linux] `python3 -m venv env`
+    - [Windows] `py -m venv env`
+1. Activate the virtual environment by running:
+    - [Max/Linux] `source env/bin/activate`
+    - [Windows] `.\env\Scripts\activate`
+1. To install required dependencies, run `pip install -r requirements.txt`
+1. Using psql, create the `customers` database by entering `create database customers;`
+1. In the root folder of the project, create a file named `.env` with the following contents. Substitute {username} and {password} with the username and password of the Postgres user who owns the `customers` database
+```
+FLASK_ENV=development
+SQLALCHEMY_DATABASE_URI='postgresql://{username}:{password}@localhost:5432/customers'
+```
 
 ## Authorization
 
